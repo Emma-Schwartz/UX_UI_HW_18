@@ -123,13 +123,20 @@ nav a:focus {
 
 .resume-wrapper {
     border: 4px solid #B0DAAC; /* Example border: solid, 1 pixel, black */
-    margin: 20px; /* This will create a margin around the entire resume section */
+    margin: 20px;
+    margin-top: 5px; /* This will create a margin around the entire resume section */
     padding: 20px; /* This will add space between the border and the content inside */
   }
 
   .resume h2 {
     padding-bottom: 5px;
-    padding: 20px;
+    padding: 5px;
+  }
+
+  .resume {
+    /* Reduce top and bottom padding, adjust values as needed */
+    padding-top: 20px;
+    padding-bottom: 5px;
   }
 
   .industries-wrapper {
@@ -145,19 +152,39 @@ nav a:focus {
     flex-wrap: wrap; /* This will allow items to be on the same line if there's enough space */
   }
   
+  .button-container {
+    text-align: right;
+    padding: 20px;
+    padding-top: 5px;
+    margin-bottom: 0;
+  }
+  
   .download-button {
-    background-color: #000;
-    color: #fff;
+    background-color: rgba(0, 0, 0, 0); /* Fully transparent background */
+    color: #B0DAAC; /* Green text */
     padding: 10px 20px;
     text-decoration: none;
     font-size: 14px;
-    border: none;
+    border: 2px solid #B0DAAC; /* Optional: if you want a green border */
     cursor: pointer;
+    display: inline-block; /* or 'inline' depending on your needs */
   }
 
   .logo {
     max-width: 100%; /* Makes the logo responsive */
     height: auto; /* Maintain aspect ratio */
+}
+
+.case-study::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the last number to control darkness */
+    z-index: 1; /* Ensure it's above the background image */
 }
 
 .case-studies {
@@ -195,18 +222,6 @@ nav a:focus {
     margin: 0 auto 15px; /* Center images and add bottom margin */
 }
 
-.case-study::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Adjust the last number to control darkness */
-    z-index: 1; /* Ensure it's above the background image */
-}
-
 .case-study .content {
     text-align: center;
     position: relative; /* Set position to absolute */
@@ -228,23 +243,67 @@ nav a:focus {
     margin-bottom: 60px; /* Add margin below the subheader */
 }
 
-.case-study .btn {
-    margin-top: 40px; /* Add margin above the button */
-    padding: 10px 30px; /* Increase padding to make the button larger */
-    background-color: transparent; /* Remove fill color */
-    border: 2px solid black; /* Add black border */
-    color: white; /* Set text color */
-    text-transform: uppercase; /* Convert text to uppercase */
-    font-weight: bold; /* Set font weight to bold */
-    font-size: 16px; /* Adjust font size as needed */
-    cursor: pointer; /* Change cursor to pointer on hover */
-}
 
 .case-studies .content button {
     padding: 10px 30px; /* Add padding to the button */
     border: 2px solid black; /* Add black border */
     cursor: pointer;
 }
+
+.case-study .btn {
+    margin-top: 40px;
+    padding: 10px 30px;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    border: 2px solid black;
+    color: black; /* Black text */
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.case-study button {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: white; /* White text */
+    border: 2px solid white !important; /* White border */
+    /* Other styles */
+}
+
+.education h1 {
+    font-size: 24px; /* or any other size */
+    color: #000; /* or any other color */
+}
+
+.education-entry {
+    margin-bottom: 20px;
+}
+
+.education-entry p {
+    margin: 5px 0;
+    font-size: 18px; /* or any other size */
+}
+
+.education-entry span {
+    margin: 5px 0;
+    font-size: 18px; /* or any other size */
+    color: #000; /* or any other color */
+}
+
+.download-button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    display: block; /* Align to the right */
+    width: fit-content;
+    margin: 20px auto 0 auto;
+}
+
+.green-text-container p {
+    color: #779674; /* Your desired shade of green */
+  }
 
   footer {
     text-align: center; /* Center the content */
@@ -286,3 +345,39 @@ footer img {
     font-size: 1.5rem; /* Increase font size for these elements */
     font-weight: bold; /* Optional: makes the text bold */
 }
+
+@media only screen and (max-width: 768px) {
+    /* Styles that will apply when the browser window is 768px wide or less */
+    body {
+      background-attachment: scroll; /* Because fixed backgrounds do not work well on all mobile devices */
+    }
+  
+    nav {
+      width: 100%; /* Full width for smaller screens */
+      padding: 0.5%; /* Adjust padding for smaller screens */
+    }
+  
+    nav ul {
+      text-align: center; /* Center-align the menu items for mobile */
+    }
+  
+    nav ul li {
+      display: block; /* Stack the menu items vertically */
+      margin-right: 0; /* Remove the right margin */
+    }
+  
+    .button-container {
+      text-align: center; /* Center-align the download button */
+      padding-top: 10px; /* Reduce the top padding */
+    }
+  
+    .download-button {
+      /* Adjust button styling if necessary */
+      display: inline-block; /* Center the button */
+      width: auto; /* Adjust the width as needed */
+      margin: 10px 0; /* Add some margin to the top and bottom */
+    }
+  
+    /* Add any other styles you want to adjust for mobile here */
+  }
+  
